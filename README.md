@@ -18,6 +18,10 @@ Implementation of multiple design pattterns through pre-existing classes of a de
 ## OrderHistory - using the iterator pattern
 - Provides several option of traversal regardless of the the type of data
 - Option will be provided to either view Order History in ascending or descending order which will require different traversal methods 
+
+## DeliveryRequest - using the abstract factory pattern
+- Comprises two factories that specify and manage each delivery request based on whether it is standard or express.
+- It can be updated if more products/specifications for a delivery are needed, like the item category and vehicle type for a delivery.
  
 ### Related classes:
 - EventListener **interface**
