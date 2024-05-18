@@ -2,6 +2,7 @@ package AbstractFactory;
 
 import AbstractFactory.factories.DeliveryServiceFactory;
 import AbstractFactory.factories.StandardDeliveryFactory;
+import AbstractFactory.factories.ExpressDeliveryFactory;
 import AbstractFactory.products.DeliveryManager;
 import AbstractFactory.products.DeliveryRequest;
 
@@ -14,7 +15,7 @@ public class DeliveryServiceClient {
         standardRequest.request();
         standardManager.manage();
 
-        DeliveryServiceFactory expressDelivery = new StandardDeliveryFactory();
+        DeliveryServiceFactory expressDelivery = new ExpressDeliveryFactory();
         DeliveryRequest expressRequest = expressDelivery.createDeliveryRequest();
         DeliveryManager expressManager = expressDelivery.createDeliveryManager();
 
