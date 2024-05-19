@@ -4,8 +4,9 @@ public class MediatorDriverTestingMain {
         DepotMediator mediator = new ConcreteDepotMediator();
 
         // Create depots and register them with the mediator
-        Depot depot1 = Depot.getInstance();
-        Depot depot2 = Depot.getInstance();
+        Depot depot1 = Depot.getInstance(0);
+        Depot depot2 = Depot.getInstance(1);
+
         Address address1 = new Address(), address2 = new Address();
 
         address1.setCity("Cairo");

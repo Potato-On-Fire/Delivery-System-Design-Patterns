@@ -15,22 +15,25 @@ public class Depot {
     }
 
     // Method to get an instance of the Depot.
-    public static Depot getInstance() {
-        int index = instanceCount % MAX_INSTANCES;
-        Depot result = instances[index];
+    public static Depot getInstance(int index) {
+        if (index < 0 || index >= MAX_INSTANCES) {
+            throw new IllegalArgumentException("Index is out of range.");
+        }
 
-        if (result == null) {
-            synchronized (Depot.class) {
-                result = instances[index];
-                if (result == null) {
-                    result = new Depot(new Address(), 10); // Assuming default capacity.
-                    instances[index] = result;
-                    instanceCount++;
-                }
+        synchronized (Depot.class) {
+            if (instances[index] == null) {
+                instances[index] = new Depot(new Address(), 10); // Assuming default capacity.
+                instanceCount++;
             }
         }
-        return result;
+
+        return instances[index];
     }
+
+    public static Depot getInstance() {
+        return getInstance(0); // Default to the first instance if no index is provided.
+    }
+
 
     // Getter for location.
     public Address getLocation() {
