@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
-
 // Concrete implementation of the DepotMediator interface.
 public class ConcreteDepotMediator implements DepotMediator {
     // List to hold the registered depots.
     private final List<Depot> depots = new ArrayList<>();
+
+    //Depots managed getter
+    public List<Depot> getDepots() {
+        return depots;
+    }
 
     // Registers a depot with the mediator.
     @Override
@@ -23,7 +27,7 @@ public class ConcreteDepotMediator implements DepotMediator {
         for (Depot depot : depots) {
             if (depot.enterVehicle()) {
                 vehicle.setActive(true);
-                System.out.println("Vehicle " + vehicle.getId() + " entered Depot at " + depot.getLocation());
+                System.out.println("Vehicle " + vehicle.getId() + " entered Depot at " + depot.getLocation().getCity());
                 return true;
             }
         }
@@ -36,9 +40,9 @@ public class ConcreteDepotMediator implements DepotMediator {
     public void exitVehicle(Vehicle vehicle, Depot depot) {
         if (depot.exitVehicle()) {
             vehicle.setActive(false);
-            System.out.println("Vehicle " + vehicle.getId() + " exited Depot at " + depot.getLocation());
+            System.out.println("Vehicle " + vehicle.getId() + " exited Depot at " + depot.getLocation().getCity());
         } else {
-            System.out.println("Vehicle " + vehicle.getId() + " could not exit Depot at " + depot.getLocation());
+            System.out.println("Vehicle " + vehicle.getId() + " could not exit Depot at " + depot.getLocation().getCity());
         }
     }
 }

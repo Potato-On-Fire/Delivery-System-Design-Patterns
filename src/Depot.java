@@ -59,4 +59,8 @@ public class Depot {
         }
         return false;
     }
+    public boolean hasSpace() {
+        return currentVehicles < vehicleCapacity;
+    }
+
 }
