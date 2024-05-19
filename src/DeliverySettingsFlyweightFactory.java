@@ -14,4 +14,8 @@ public class DeliverySettingsFlyweightFactory {
         }
         return flyweight;
     }
+    // This method is added for testing purposes to check the size of the flyweights map
+    public static int getFlyweightsCount() {
+        return flyweights.size();
+    }
 }

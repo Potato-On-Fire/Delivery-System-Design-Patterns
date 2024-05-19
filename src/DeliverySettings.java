@@ -1,23 +1,27 @@
 import java.util.Date;
 
-public class DeliverySettings{
+public class DeliverySettings {
     private final float weight;
     private final int quantity;
     private final String recipient;
     private final Address destinationAddress;
     private final Date deliveryDate;
-    //DeliverySettings intrinsic attributes (Flyweight)
     private final DeliverySettingsFlyweight flyweight;
 
-    public DeliverySettings(DeliverySettingsFlyweight flyweight, float weight, int quantity, String recipient, Address destinationAddress, Date deliveryDate) {
-        this.flyweight = flyweight;
+    // Constructor taking both intrinsic and extrinsic attributes
+    public DeliverySettings(String deliveryType, String packagingType, String priority, String vehicleType, String sizeCategory,
+                            float weight, int quantity, String recipient, Address destinationAddress, Date deliveryDate) {
         this.weight = weight;
         this.quantity = quantity;
         this.recipient = recipient;
         this.destinationAddress = destinationAddress;
         this.deliveryDate = deliveryDate;
+
+        // Use the flyweight factory to create or retrieve the flyweight object
+        this.flyweight = DeliverySettingsFlyweightFactory.getFlyweight(deliveryType, packagingType, priority, vehicleType, sizeCategory);
     }
-    //Public getters for all attributes, including flyweight ones.
+
+    // Getters for all attributes
     public float getWeight() {
         return weight;
     }
