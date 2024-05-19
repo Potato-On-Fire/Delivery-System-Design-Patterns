@@ -3,17 +3,17 @@ import java.util.List;
 
 // Notification service class using the Observer design pattern
 public class NotificationService {
-    private final List<EmailMsgListener> customers;
+    private final List<EventListener> customers;
 
-    public NotificationService(List<EmailMsgListener> customers) {
+    public NotificationService(List<EventListener> customers) {
         this.customers = new ArrayList<>();
     }
 
-    public void subscribe(EmailMsgListener listener) {
+    public void subscribe(EventListener listener) {
         customers.add(listener);
     }
 
-    public void unsubscribe(EmailMsgListener listener) {
+    public void unsubscribe(EventListener listener) {
         customers.remove(listener);
     }
 
