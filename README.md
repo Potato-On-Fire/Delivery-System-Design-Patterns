@@ -27,3 +27,6 @@ Implementation of multiple design pattterns through pre-existing classes of a de
 - Comprises two factories that specify and manage each delivery request based on whether it is standard or express.
 - It can be updated if more products/specifications for a delivery are needed, like the item category and vehicle type for a delivery.
 
+## VehicleType - using the bridge pattern
+- Specifies which vehicle type is allowed for which customer, and maintains the loose coupling between the abstraction and implementation heirarchies.
+- Allows for the introduction of additional types of vehicles and the ability to modify their applicability to different customer groups.
