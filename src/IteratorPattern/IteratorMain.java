@@ -12,7 +12,7 @@ public class IteratorMain {
             }
 
             DescendingHistory custHistory2 = new DescendingHistory();
-            System.out.println("\n\nView newest to Oldest :" );
+            System.out.println("\nView newest to Oldest :" );
             System.out.println("------------------------------" );
             for(Iterator iter = custHistory2.getIterator(); iter.hasNext();){
                 String ID= (String)iter.getNext();
