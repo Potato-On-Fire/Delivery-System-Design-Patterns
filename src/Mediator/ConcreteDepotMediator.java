@@ -1,6 +1,10 @@
+package Mediator;
+
+import Singleton.Depot;
+
 import java.util.ArrayList;
 import java.util.List;
-// Concrete implementation of the DepotMediator interface.
+// Concrete implementation of the Mediator.Mediator.DepotMediator interface.
 public class ConcreteDepotMediator implements DepotMediator {
     // List to hold the registered depots.
     private final List<Depot> depots = new ArrayList<>();
@@ -27,11 +31,11 @@ public class ConcreteDepotMediator implements DepotMediator {
         for (Depot depot : depots) {
             if (depot.enterVehicle()) {
                 vehicle.setActive(true);
-                System.out.println("Vehicle " + vehicle.getId() + " entered Depot at " + depot.getLocation().getCity());
+                System.out.println("Mediator.Vehicle " + vehicle.getId() + " entered Singleton.Depot at " + depot.getLocation().getCity());
                 return true;
             }
         }
-        System.out.println("No available space for Vehicle " + vehicle.getId());
+        System.out.println("No available space for Mediator.Vehicle " + vehicle.getId());
         return false;
     }
 
@@ -40,9 +44,9 @@ public class ConcreteDepotMediator implements DepotMediator {
     public void exitVehicle(Vehicle vehicle, Depot depot) {
         if (depot.exitVehicle()) {
             vehicle.setActive(false);
-            System.out.println("Vehicle " + vehicle.getId() + " exited Depot at " + depot.getLocation().getCity());
+            System.out.println("Mediator.Vehicle " + vehicle.getId() + " exited Singleton.Depot at " + depot.getLocation().getCity());
         } else {
-            System.out.println("Vehicle " + vehicle.getId() + " could not exit Depot at " + depot.getLocation().getCity());
+            System.out.println("Mediator.Vehicle " + vehicle.getId() + " could not exit Singleton.Depot at " + depot.getLocation().getCity());
         }
     }
 }

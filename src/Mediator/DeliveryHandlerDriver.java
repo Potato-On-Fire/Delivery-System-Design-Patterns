@@ -1,8 +1,12 @@
+package Mediator;
+
+import Singleton.Depot;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class DeliveryHandlerDriver {
-    private DepotMediator mediator;
+    private final DepotMediator mediator;
     private List<Vehicle> vehicles;
 
     public DeliveryHandlerDriver(DepotMediator mediator) {
@@ -32,7 +36,7 @@ public class DeliveryHandlerDriver {
             boolean entered = mediator.enterVehicle(vehicle);
             if (entered) {
                 vehicle.setActive(true);
-                System.out.println("Vehicle " + vehicle.getId() + " assigned to new delivery and is now active.");
+                System.out.println("Mediator.Vehicle " + vehicle.getId() + " assigned to new delivery and is now active.");
                 return true;
             }
         }
@@ -46,7 +50,7 @@ public class DeliveryHandlerDriver {
             if (depot.hasSpace()) {
                 mediator.exitVehicle(vehicle, depot);
                 vehicle.setActive(false);
-                System.out.println("Vehicle " + vehicle.getId() + " returned to Depot at " + depot.getLocation().getCity());
+                System.out.println("Mediator.Vehicle " + vehicle.getId() + " returned to Singleton.Depot at " + depot.getLocation().getCity());
                 return;
             }
         }

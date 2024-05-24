@@ -1,3 +1,7 @@
+package Flyweight;
+
+import Singleton.Address;
+
 import java.util.Date;
 
 public class DeliverySettings {

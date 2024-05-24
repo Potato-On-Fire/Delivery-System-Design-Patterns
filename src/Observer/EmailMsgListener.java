@@ -1,3 +1,4 @@
+package Observer;
 
 public class EmailMsgListener implements EventListener {
     private final String email;

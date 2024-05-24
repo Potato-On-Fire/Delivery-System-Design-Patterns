@@ -1,9 +1,11 @@
-// Class representing a Vehicle.
+package Mediator;
+
+// Class representing a Mediator.Vehicle.
 public class Vehicle {
-    private String id;
+    private final String id;
     private boolean isActive;
 
-    // Constructor for Vehicle.
+    // Constructor for Mediator.Vehicle.
     public Vehicle(String id) {
         this.id = id;
         this.isActive = false; // Default to not active.

@@ -1,6 +1,10 @@
+package Flyweight;
+
+import Singleton.Address;
+
 import java.util.Date;
 
-public class FlyweightDriverTestingMain {
+public class FlyweightTestingMain {
     public static void main(String[] args) {
         // Create delivery settings using the new constructor
         DeliverySettings delivery1 = new DeliverySettings("Express", "Box", "High", "Truck", "Small",

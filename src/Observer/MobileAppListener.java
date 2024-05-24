@@ -1,3 +1,4 @@
+package Observer;
 
 public class MobileAppListener implements EventListener {
     private final String username;

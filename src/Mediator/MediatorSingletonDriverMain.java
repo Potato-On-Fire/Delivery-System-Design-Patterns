@@ -1,4 +1,9 @@
-public class MediatorDriverTestingMain {
+package Mediator;
+
+import Singleton.Address;
+import Singleton.Depot;
+
+public class MediatorSingletonDriverMain {
     public static void main(String[] args) {
         // Create a mediator
         DepotMediator mediator = new ConcreteDepotMediator();

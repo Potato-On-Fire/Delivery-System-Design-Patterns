@@ -1,4 +1,6 @@
-// Class representing a Depot with a maximum of 2 instances allowed (Singleton pattern with a twist).
+package Singleton;
+
+// Class representing a Singleton.Depot with a maximum of 2 instances allowed (Singleton pattern with a twist).
 public class Depot {
     public static final int MAX_INSTANCES = 2;
     private static final Depot[] instances = new Depot[MAX_INSTANCES];
@@ -14,7 +16,7 @@ public class Depot {
         this.currentVehicles = 0;
     }
 
-    // Method to get an instance of the Depot.
+    // Method to get an instance of the Singleton.Depot.
     public static Depot getInstance(int index) {
         if (index < 0 || index >= MAX_INSTANCES) {
             throw new IllegalArgumentException("Index is out of range.");
