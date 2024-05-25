@@ -48,4 +48,3 @@ public class MediatorSingletonDriverMain {
         deliveryHandler.handleNewDelivery(); // Should now be able to assign vehicle1 or vehicle2 again
     }
 }
-
