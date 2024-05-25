@@ -9,6 +9,13 @@ Implementation of multiple design pattterns through pre-existing classes of a de
 - Split up the extrinsic and intrinsic attributes, with the latter being added in the newly added flyweight class.
 - The flyweight class is instantiated through a factory, which only creates a new object of it if none with the same requested attribute combination exist.
 
+## LegacyDeliverySystem to ModernDeliverySystem - using the adapter pattern
+- Assumptions: The adapter will work as intended assuming that the legacy system was working completely fine before using the adapter for further deployement, and that the modern system is correctly implemented with the replaced functionality, and can communicate the same way the legacy system did with other components.
+- DeliverySystemAdapter migrates legacy system to a more modern one, acts as a helpful tool in deploying the modern system in parallel with the legacy one.
+- Some functionality in the modern system are adapted using the created adapter, while others that are unchanged are used within the adapter given the previous functionality of the LegacyDeliverySystem.
+- Applies Open-closed principle, any changes added to the delivery system can be integrated and deployed using the adapter class.
+
+
 ## Observer.NotificationService - using the observer pattern
 ### Related classes:
 - Observer.EventListener **interface**
